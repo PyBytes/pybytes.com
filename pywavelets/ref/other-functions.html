@@ -1,0 +1,308 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Other functions &mdash; PyWavelets Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyWavelets Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="PyWavelets Documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="Usage examples" href="../regression/index.html" />
+    <link rel="prev" title="Thresholding functions" href="thresholding-functions.html" />
+ 
+<meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="author" content="Filip Wasilewski"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="INDEX,FOLLOW"/>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("#toggle-edit-info").click(function (e) {
+                e.preventDefault();
+                $("#edit-info").toggle();
+            });
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3396395-3']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../regression/index.html" title="Usage examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thresholding-functions.html" title="Thresholding functions"
+             accesskey="P">previous</a> |</li>
+    <li><a href="../index.html">Home &raquo;</a></li>
+          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="ref-other"></span><div class="section" id="other-functions">
+<h1>Other functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="single-level-n-dimensional-discrete-wavelet-transform">
+<h2>Single-level n-dimensional Discrete Wavelet Transform.<a class="headerlink" href="#single-level-n-dimensional-discrete-wavelet-transform" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.dwtn">
+<tt class="descclassname">pywt.</tt><tt class="descname">dwtn</tt><big>(</big><em>data</em>, <em>wavelet</em><span class="optional">[</span>, <em>mode='sym'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pywt.dwtn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs single-level n-dimensional Discrete Wavelet Transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; n-dimensional array</li>
+<li><strong>wavelet</strong> &#8211; Wavelet to use in the transform. This can be a name of the wavelet from the <a class="reference internal" href="wavelets.html#pywt.wavelist" title="pywt.wavelist"><tt class="xref py py-func docutils literal"><span class="pre">wavelist()</span></tt></a> list or a <a class="reference internal" href="wavelets.html#pywt.Wavelet" title="pywt.Wavelet"><tt class="xref py py-class docutils literal"><span class="pre">Wavelet</span></tt></a> object instance.</li>
+<li><strong>mode</strong> &#8211; Signal extension mode to deal with the border distortion problem. See <a class="reference internal" href="signal-extension-modes.html#ref-modes"><em>MODES</em></a> for details.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Results are arranged in a dictionary, where key specifies
+the transform type on each dimension and value is a n-dimensional
+coefficients array.</p>
+<p>For example, for a 2D case the result will look something like this:</p>
+<div class="highlight-python"><pre>{
+    'aa': &lt;coeffs&gt;  # A(LL) - approx. on 1st dim, approx. on 2nd dim
+    'ad': &lt;coeffs&gt;  # H(LH) - approx. on 1st dim, det. on 2nd dim
+    'da': &lt;coeffs&gt;  # V(HL) - det. on 1st dim, approx. on 2nd dim
+    'dd': &lt;coeffs&gt;  # D(HH) - det. on 1st dim, det. on 2nd dim
+}</pre>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="integrating-wavelet-functions-intwave">
+<h2>Integrating wavelet functions - <a class="reference internal" href="#pywt.intwave" title="pywt.intwave"><tt class="xref py py-func docutils literal"><span class="pre">intwave()</span></tt></a><a class="headerlink" href="#integrating-wavelet-functions-intwave" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.intwave">
+<tt class="descclassname">pywt.</tt><tt class="descname">intwave</tt><big>(</big><em>wavelet</em><span class="optional">[</span>, <em>precision=8</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pywt.intwave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integration of wavelet function approximations as well as any other signals
+can be performed using the <a class="reference internal" href="#pywt.intwave" title="pywt.intwave"><tt class="xref py py-func docutils literal"><span class="pre">pywt.intwave()</span></tt></a> function.</p>
+<p>The result of the call depends on the <em>wavelet</em> argument:</p>
+<ul>
+<li><p class="first">for orthogonal wavelets - an integral of the wavelet function specified
+on an x-grid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">int_psi</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">intwave</span><span class="p">(</span><span class="n">wavelet</span><span class="p">,</span> <span class="n">precision</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">for other wavelets - integrals of decomposition and reconstruction
+wavelet functions and a corresponding x-grid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">int_psi_d</span><span class="p">,</span> <span class="n">int_psi_r</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">intwave</span><span class="p">(</span><span class="n">wavelet</span><span class="p">,</span> <span class="n">precision</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">for a tuple of coefficients data and a x-grid - an integral of function
+and the given x-grid is returned (the x-grid is used for computations).:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">int_function</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">intwave</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">precision</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pywt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wavelet1</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">(</span><span class="s">&#39;db2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">int_psi</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">intwave</span><span class="p">(</span><span class="n">wavelet1</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wavelet2</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">(</span><span class="s">&#39;bior1.3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">int_psi_d</span><span class="p">,</span> <span class="n">int_psi_r</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">intwave</span><span class="p">(</span><span class="n">wavelet2</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="central-frequency-of-psi-wavelet-function">
+<h2>Central frequency of <em>psi</em> wavelet function<a class="headerlink" href="#central-frequency-of-psi-wavelet-function" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.centfrq">
+<tt class="descclassname">pywt.</tt><tt class="descname">centfrq</tt><big>(</big><em>wavelet</em><span class="optional">[</span>, <em>precision=8</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#pywt.centfrq" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descclassname">pywt.</tt><tt class="descname">centfrq</tt><big>(</big><em>(function_approx</em>, <em>x)</em><big>)</big></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>wavelet</strong> &#8211; <a class="reference internal" href="wavelets.html#pywt.Wavelet" title="pywt.Wavelet"><tt class="xref py py-class docutils literal"><span class="pre">Wavelet</span></tt></a>, wavelet name string or
+<cite>(wavelet function approx., x grid)</cite> pair</li>
+<li><strong>precision</strong> &#8211; Precision that will be used for wavelet function
+approximation computed with the <a class="reference internal" href="wavelets.html#pywt.Wavelet.wavefun" title="pywt.Wavelet.wavefun"><tt class="xref py py-meth docutils literal"><span class="pre">Wavelet.wavefun()</span></tt></a>
+method.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Other functions</a><ul>
+<li><a class="reference internal" href="#single-level-n-dimensional-discrete-wavelet-transform">Single-level n-dimensional Discrete Wavelet Transform.</a></li>
+<li><a class="reference internal" href="#integrating-wavelet-functions-intwave">Integrating wavelet functions - <tt class="docutils literal"><span class="pre">intwave()</span></tt></a></li>
+<li><a class="reference internal" href="#central-frequency-of-psi-wavelet-function">Central frequency of <em>psi</em> wavelet function</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thresholding-functions.html"
+                        title="previous chapter">Thresholding functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../regression/index.html"
+                        title="next chapter">Usage examples</a></p><div>
+<h3>Python Development</h3>
+<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
+<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://github.com/nigma/pywt"><img src="../_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="../_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="../_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
+<li><a href="http://twitter.com/filipwasilewski"><img src="../_static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+<div id="edit-instructions">
+    <h3>Edit this document</h3>
+    <p>
+        <a href="#" id="toggle-edit-info">
+        <img src="../_static/page_edit.png" height="16" width="16" alt="" />
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+        </a>
+    </p>
+    <ol id="edit-info" style="display: none;">
+        <li>
+            Go to
+            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/ref/other-functions.rst" target="_blank">
+                Other functions
+            </a></i> on GitHub.
+        </li>
+        <li>
+            Press <b>Edit this file</b> button.
+        </li>
+        <li>
+            Edit file contents using GitHub's text editor in your web browser
+        </li>
+        <li>
+            Fill in the <b>Commit message</b> text box at the end of the page
+            telling <i>why</i> you did the changes.
+            Press <b>Propose file change</b> button next to it when done.
+        </li>
+        <li>
+            On <i>Send a pull request</i> page you don't need to fill in text
+            anymore. Just press <b>Send pull request</b> button.
+        </li>
+        <li>
+            Your changes are now queued for review under project's
+            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            on Github.
+        </li>
+    </ol>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../regression/index.html" title="Usage examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thresholding-functions.html" title="Thresholding functions"
+             >previous</a> |</li>
+    <li><a href="../index.html">Home &raquo;</a></li>
+          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
+          <li><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
+      Last updated on Aug 31, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

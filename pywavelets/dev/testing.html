@@ -1,0 +1,236 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing &mdash; PyWavelets Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyWavelets Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="PyWavelets Documentation" href="../index.html" />
+    <link rel="up" title="Development notes" href="index.html" />
+    <link rel="next" title="Resources" href="../resources.html" />
+    <link rel="prev" title="Building and installing PyWavelets" href="building_extension.html" />
+ 
+<meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="author" content="Filip Wasilewski"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="INDEX,FOLLOW"/>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("#toggle-edit-info").click(function (e) {
+                e.preventDefault();
+                $("#edit-info").toggle();
+            });
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3396395-3']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../resources.html" title="Resources"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="building_extension.html" title="Building and installing PyWavelets"
+             accesskey="P">previous</a> |</li>
+    <li><a href="../index.html">Home &raquo;</a></li>
+          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Development notes</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="testing">
+<span id="dev-testing"></span><h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="continous-integration-with-travis-ci">
+<h2>Continous integration with Travis-CI<a class="headerlink" href="#continous-integration-with-travis-ci" title="Permalink to this headline">¶</a></h2>
+<p>The project is using <a class="reference external" href="http://travis-ci.org/#!/nigma/pywt">Travis-CI</a> service
+for continous integration and testing.</p>
+<p>Current build status is:</p>
+<a class="reference external image-reference" href="https://secure.travis-ci.org/nigma/pywt"><img alt="Build Status" src="https://secure.travis-ci.org/nigma/pywt.png?branch=develop" /></a>
+<p>If you are submitting a patch or pull request please make sure it
+does not break the build.</p>
+</div>
+<div class="section" id="running-tests-locally">
+<h2>Running tests locally<a class="headerlink" href="#running-tests-locally" title="Permalink to this headline">¶</a></h2>
+<p>Simply:</p>
+<div class="highlight-python"><pre>python setup.py test</pre>
+</div>
+</div>
+<div class="section" id="running-tests-with-tox">
+<h2>Running tests with Tox<a class="headerlink" href="#running-tests-with-tox" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s also a config file for running tests with Tox (<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tox</span></tt>):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tox</span>
+</pre></div>
+</div>
+<p>It is not however very convenient at the moment because Tox recreates
+the test environment (which is a good thing) and builds numpy from
+source on every run (which takes a lot of time).</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Testing</a><ul>
+<li><a class="reference internal" href="#continous-integration-with-travis-ci">Continous integration with Travis-CI</a></li>
+<li><a class="reference internal" href="#running-tests-locally">Running tests locally</a></li>
+<li><a class="reference internal" href="#running-tests-with-tox">Running tests with Tox</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="building_extension.html"
+                        title="previous chapter">Building and installing PyWavelets</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../resources.html"
+                        title="next chapter">Resources</a></p><div>
+<h3>Python Development</h3>
+<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
+<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://github.com/nigma/pywt"><img src="../_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="../_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="../_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
+<li><a href="http://twitter.com/filipwasilewski"><img src="../_static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+<div id="edit-instructions">
+    <h3>Edit this document</h3>
+    <p>
+        <a href="#" id="toggle-edit-info">
+        <img src="../_static/page_edit.png" height="16" width="16" alt="" />
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+        </a>
+    </p>
+    <ol id="edit-info" style="display: none;">
+        <li>
+            Go to
+            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/dev/testing.rst" target="_blank">
+                Testing
+            </a></i> on GitHub.
+        </li>
+        <li>
+            Press <b>Edit this file</b> button.
+        </li>
+        <li>
+            Edit file contents using GitHub's text editor in your web browser
+        </li>
+        <li>
+            Fill in the <b>Commit message</b> text box at the end of the page
+            telling <i>why</i> you did the changes.
+            Press <b>Propose file change</b> button next to it when done.
+        </li>
+        <li>
+            On <i>Send a pull request</i> page you don't need to fill in text
+            anymore. Just press <b>Send pull request</b> button.
+        </li>
+        <li>
+            Your changes are now queued for review under project's
+            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            on Github.
+        </li>
+    </ol>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../resources.html" title="Resources"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="building_extension.html" title="Building and installing PyWavelets"
+             >previous</a> |</li>
+    <li><a href="../index.html">Home &raquo;</a></li>
+          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
+          <li><a href="index.html" >Development notes</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
+      Last updated on Aug 31, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

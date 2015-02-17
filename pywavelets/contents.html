@@ -1,0 +1,253 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PyWavelets &mdash; PyWavelets Documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyWavelets Documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="PyWavelets Documentation" href="index.html" />
+    <link rel="next" title="API Reference" href="ref/index.html" />
+    <link rel="prev" title="Resources" href="resources.html" />
+ 
+<meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="author" content="Filip Wasilewski"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="INDEX,FOLLOW"/>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("#toggle-edit-info").click(function (e) {
+                e.preventDefault();
+                $("#edit-info").toggle();
+            });
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3396395-3']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ref/index.html" title="API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="Resources"
+             accesskey="P">previous</a> |</li>
+    <li><a href="index.html">Home &raquo;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pywavelets">
+<span id="contents"></span><h1>PyWavelets<a class="headerlink" href="#pywavelets" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ref/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ref/wavelets.html">Wavelets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/signal-extension-modes.html">Signal extension modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/dwt-discrete-wavelet-transform.html">Discrete Wavelet Transform (DWT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/idwt-inverse-discrete-wavelet-transform.html">Inverse Discrete Wavelet Transform (IDWT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/2d-dwt-and-idwt.html">2D Forward and Inverse Discrete Wavelet Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/swt-stationary-wavelet-transform.html">Stationary Wavelet Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/wavelet-packets.html">Wavelet Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/thresholding-functions.html">Thresholding functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/other-functions.html">Other functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="regression/index.html">Usage examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="regression/wavelet.html">The Wavelet object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/modes.html">Signal Extension Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/dwt-idwt.html">DWT and IDWT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/multilevel.html">Multilevel DWT, IDWT and SWT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/wp.html">Wavelet Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/wp2d.html">2D Wavelet Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression/gotchas.html">Gotchas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev/index.html">Development notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev/preparing_windows_build_environment.html">Preparing Windows build environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/preparing_linux_build_environment.html">Preparing Linux build environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/installing_build_dependencies.html">Installing build dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/building_extension.html">Building and installing PyWavelets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev/index.html#something-not-working">Something not working?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#questions-and-bug-reports">Questions and bug reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#wavelet-properties-browser">Wavelet Properties Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html#articles">Articles</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PyWavelets</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="resources.html"
+                        title="previous chapter">Resources</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ref/index.html"
+                        title="next chapter">API Reference</a></p><div>
+<h3>Python Development</h3>
+<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
+<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://github.com/nigma/pywt"><img src="_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
+<li><a href="http://twitter.com/filipwasilewski"><img src="_static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+<div id="edit-instructions">
+    <h3>Edit this document</h3>
+    <p>
+        <a href="#" id="toggle-edit-info">
+        <img src="_static/page_edit.png" height="16" width="16" alt="" />
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+        </a>
+    </p>
+    <ol id="edit-info" style="display: none;">
+        <li>
+            Go to
+            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/contents.rst" target="_blank">
+                PyWavelets
+            </a></i> on GitHub.
+        </li>
+        <li>
+            Press <b>Edit this file</b> button.
+        </li>
+        <li>
+            Edit file contents using GitHub's text editor in your web browser
+        </li>
+        <li>
+            Fill in the <b>Commit message</b> text box at the end of the page
+            telling <i>why</i> you did the changes.
+            Press <b>Propose file change</b> button next to it when done.
+        </li>
+        <li>
+            On <i>Send a pull request</i> page you don't need to fill in text
+            anymore. Just press <b>Send pull request</b> button.
+        </li>
+        <li>
+            Your changes are now queued for review under project's
+            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            on Github.
+        </li>
+    </ol>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ref/index.html" title="API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="Resources"
+             >previous</a> |</li>
+    <li><a href="index.html">Home &raquo;</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
+      Last updated on Aug 31, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
