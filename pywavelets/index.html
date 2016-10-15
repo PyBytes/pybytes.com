@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,32 +8,34 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PyWavelets - Discrete Wavelet Transform in Python &mdash; PyWavelets Documentation</title>
+    <title>PyWavelets - Discrete Wavelet Transform in Python &#8212; PyWavelets Documentation</title>
     
-    <link rel="stylesheet" href="static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.2.2',
+        URL_ROOT:    './',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within PyWavelets Documentation"
-          href="static/opensearch.xml"/>
-    <link rel="shortcut icon" href="static/favicon.ico"/>
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="PyWavelets Documentation" href="#" />
     <link rel="next" title="API Reference" href="ref/index.html" />
  
 <meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
-<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
 <meta name="author" content="Filip Wasilewski"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="INDEX,FOLLOW"/>
@@ -63,9 +64,17 @@
     })();
 </script>
 
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -74,42 +83,51 @@
         <li class="right" >
           <a href="ref/index.html" title="API Reference"
              accesskey="N">next</a> |</li>
-    <li><a href="#">Home &raquo;</a></li> 
+    <li><a href="#">Home &#187;</a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="pywavelets-discrete-wavelet-transform-in-python">
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <div class="section" id="pywavelets-discrete-wavelet-transform-in-python">
 <h1>PyWavelets - Discrete Wavelet Transform in Python<a class="headerlink" href="#pywavelets-discrete-wavelet-transform-in-python" title="Permalink to this headline">¶</a></h1>
-<p>PyWavelets is a free Open Source wavelet transform software for <a class="reference external" href="http://python.org/">Python</a>
-programming language. It is written in Python, Cython and C for a mix of easy
-and powerful high-level interface and the best performance.</p>
-<p>PyWavelets is very easy to start with and use. Just install the package, open
-the Python interactive shell and type:</p>
+<p>PyWavelets is free and Open Source wavelet transform software for the <a class="reference external" href="http://python.org/">Python</a>
+programming language. It combines a simple high level interface with low level
+C and Cython performance.</p>
+<p>PyWavelets is very easy to use and get started with. Just install the package,
+open the Python interactive shell and type:</p>
 <blockquote>
-<div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pywt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cA</span><span class="p">,</span> <span class="n">cD</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">dwt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s">&#39;db1&#39;</span><span class="p">)</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pywt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cA</span><span class="p">,</span> <span class="n">cD</span> <span class="o">=</span> <span class="n">pywt</span><span class="o">.</span><span class="n">dwt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;db1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Voilà! Computing wavelet transforms never before has been so simple :)</p>
+<p>Voilà! Computing wavelet transforms has never been so simple :)</p>
 <div class="section" id="main-features">
 <h2>Main features<a class="headerlink" href="#main-features" title="Permalink to this headline">¶</a></h2>
 <p>The main features of PyWavelets are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>1D and 2D Forward and Inverse Discrete Wavelet Transform (DWT and IDWT)</li>
+<li>1D, 2D and nD Forward and Inverse Discrete Wavelet Transform (DWT and IDWT)</li>
+<li>1D, 2D and nD Multilevel DWT and IDWT</li>
 <li>1D and 2D Stationary Wavelet Transform (Undecimated Wavelet Transform)</li>
 <li>1D and 2D Wavelet Packet decomposition and reconstruction</li>
 <li>Approximating wavelet and scaling functions</li>
 <li>Over seventy <a class="reference external" href="http://wavelets.pybytes.com/">built-in wavelet filters</a>
 and custom wavelets supported</li>
 <li>Single and double precision calculations</li>
-<li>Results compatibility with Matlab Wavelet Toolbox™</li>
+<li>Real and complex calculations</li>
+<li>Results compatible with Matlab Wavelet Toolbox (TM)</li>
 </ul>
 </div></blockquote>
 </div>
@@ -118,17 +136,17 @@ and custom wavelets supported</li>
 <p>PyWavelets is a package for the Python programming language. It requires:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="http://python.org/">Python</a> 2.6 or 2.7</li>
-<li><a class="reference external" href="http://numpy.scipy.org/">numpy</a> numeric array module</li>
+<li><a class="reference external" href="http://python.org/">Python</a> 2.6, 2.7 or &gt;=3.3</li>
+<li><a class="reference external" href="http://www.numpy.org">Numpy</a> &gt;= 1.6.2</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="download">
 <h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
 <p>The most recent <em>development</em> version can be found on GitHub at
-<a class="reference external" href="https://github.com/nigma/pywt">https://github.com/nigma/pywt</a>.</p>
+<a class="reference external" href="https://github.com/PyWavelets/pywt">https://github.com/PyWavelets/pywt</a>.</p>
 <p>Latest release, including source and binary package for Windows, is available
-for download from the <a class="reference external" href="http://pypi.python.org/pypi/PyWavelets/">Python Package Index</a>.</p>
+for download from the <a class="reference external" href="http://pypi.python.org/pypi/PyWavelets/">Python Package Index</a> or on the <a class="reference external" href="https://github.com/PyWavelets/pywt/releases">Releases Page</a>.</p>
 </div>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
@@ -136,60 +154,55 @@ for download from the <a class="reference external" href="http://pypi.python.org
 and a recent version of <a class="reference external" href="http://cython.org/">Cython</a> is required.</p>
 <blockquote>
 <div><ul class="simple">
-<li>To install PyWavelets open shell prompt and type <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyWavelets</span></tt>
-or <tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">PyWavelets</span></tt>.</li>
+<li>Install PyWavelets with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyWavelets</span></code>.</li>
 <li>To build and install from source, navigate to downloaded PyWavelets source
-code directory and type <tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt>.</li>
-<li>The <a class="reference external" href="https://github.com/nigma/pywt/tarball/develop#egg=PyWavelets-dev">in-development version</a> of PyWavelets can be installed with
-<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyWavelets==dev</span></tt> or <tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">PyWavelets==dev</span></tt>.</li>
+code directory and type <code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>.</li>
 </ul>
 </div></blockquote>
 <p>Prebuilt Windows binaries and source code packages are also
 available from <a class="reference external" href="http://pypi.python.org/pypi/PyWavelets/">Python Package Index</a>.</p>
 <p>Binary packages for several Linux distributors are maintained by Open Source
-community contributors. Query your Linux package manager tool
-for <cite>python-wavelets</cite>, <cite>python-pywt</cite> or similar package name.</p>
-<div class="admonition-see-also admonition seealso">
+community contributors. Query your Linux package manager tool for
+<cite>python-pywavelets</cite>, <cite>python-wavelets</cite>, <cite>python-pywt</cite> or similar package name.</p>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="dev/index.html#dev-index"><em>Development notes</em></a> section contains more
+<p class="last"><a class="reference internal" href="dev/index.html#dev-index"><span class="std std-ref">Development notes</span></a> section contains more
 information on building and installing from source code.</p>
 </div>
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p>Documentation with detailed examples and links to more resources is available
-online at <a class="reference external" href="http://www.pybytes.com/pywavelets/">http://www.pybytes.com/pywavelets/</a> and
-<a class="reference external" href="http://pywavelets.readthedocs.org">http://pywavelets.readthedocs.org</a>.</p>
-<p>For more usage examples see the <a class="reference external" href="https://github.com/nigma/pywt/tree/master/demo">demo</a> directory in the source package.</p>
+online at <a class="reference external" href="http://pywavelets.readthedocs.org">http://pywavelets.readthedocs.org</a>.</p>
+<p>For more usage examples see the <a class="reference external" href="https://github.com/PyWavelets/pywt/tree/master/demo">demo</a> directory in the source package.</p>
 </div>
-<div class="section" id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
-<p>PyWavelets started in 2006 as an academic project for a master thesis
+<div class="section" id="state-of-development-contributing">
+<h2>State of development &amp; Contributing<a class="headerlink" href="#state-of-development-contributing" title="Permalink to this headline">¶</a></h2>
+<p>PyWavelets started in 2006 as an academic project for a masters thesis
 on <cite>Analysis and Classification of Medical Signals using Wavelet Transforms</cite>
-and is maintained by its <a class="reference external" href="http://en.ig.ma">original developer</a>.</p>
+and was maintained until 2012 by its <a class="reference external" href="http://en.ig.ma">original developer</a>.  In 2013
+maintenance was taken over in a <a class="reference external" href="https://github.com/PyWavelets/pywt">new repo</a>)
+by a larger development team - a move supported by the original developer.
+The repo move doesn&#8217;t mean that this is a fork - the package continues to be
+developed under the name &#8220;PyWavelets&#8221;, and released on PyPi and Github (see
+<a class="reference external" href="https://github.com/nigma/pywt/issues/13">this issue</a> for the discussion
+where that was decided).</p>
 <p>All contributions including bug reports, bug fixes, new feature implementations
-and documentation improvements are welcome.</p>
-<p>Go and fork on <a class="reference external" href="https://github.com/nigma/pywt">GitHub</a> today!</p>
+and documentation improvements are welcome.  Moreover, developers with an
+interest in PyWavelets are very welcome to join the development team!</p>
 </div>
 <div class="section" id="python-3">
 <h2>Python 3<a class="headerlink" href="#python-3" title="Permalink to this headline">¶</a></h2>
-<p>Python 3 development branch is at <a class="reference external" href="https://github.com/nigma/pywt/tree/py-3">https://github.com/nigma/pywt/tree/py-3</a>.
-Check out the <a class="reference external" href="https://github.com/nigma/pywt/commits/py-3">changelog</a> for
-info. Currently the code and examples are ported to work on Python 2.7 and 3.2
-from the same codebase.</p>
+<p>Python 3.x is fully supported from release v0.3.0 on.</p>
 </div>
 <div class="section" id="contact">
 <h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
-<p>Use <a class="reference external" href="https://github.com/nigma/pywt/issues">GitHub Issues</a> or <a class="reference external" href="http://groups.google.com/group/pywavelets">PyWavelets discussions group</a> to post your
+<p>Use <a class="reference external" href="https://github.com/PyWavelets/pywt/issues">GitHub Issues</a> or the <a class="reference external" href="http://groups.google.com/group/pywavelets">PyWavelets discussions group</a> to post your
 comments or questions.</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>PyWavelets is a free Open Source software released under the MIT license.</p>
-</div>
-<div class="section" id="commercial-support">
-<h2>Commercial Support<a class="headerlink" href="#commercial-support" title="Permalink to this headline">¶</a></h2>
-<p>For information on commercial support and development email me at <a class="reference external" href="mailto:en&#37;&#52;&#48;ig&#46;ma">en<span>&#64;</span>ig<span>&#46;</span>ma</a>.</p>
 </div>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
@@ -206,11 +219,10 @@ comments or questions.</p>
 </div>
 </div>
 
-
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
@@ -220,14 +232,11 @@ comments or questions.</p>
 <li><a class="reference internal" href="#download">Download</a></li>
 <li><a class="reference internal" href="#install">Install</a></li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#state-of-development-contributing">State of development &amp; Contributing</a></li>
 <li><a class="reference internal" href="#python-3">Python 3</a></li>
 <li><a class="reference internal" href="#contact">Contact</a></li>
 <li><a class="reference internal" href="#license">License</a></li>
-<li><a class="reference internal" href="#commercial-support">Commercial Support</a></li>
-<li><a class="reference internal" href="#contents">Contents</a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#contents">Contents</a></li>
 </ul>
 </li>
 </ul>
@@ -235,28 +244,21 @@ comments or questions.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="ref/index.html"
                         title="next chapter">API Reference</a></p><div>
-<h3>Python Development</h3>
-<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
-<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
 <h3>Quick links</h3>
 <ul>
-<li><a href="https://github.com/nigma/pywt"><img src="static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
-<li><a href="http://groups.google.com/group/pywavelets"><img src="static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
-<li><a href="http://wavelets.pybytes.com/"><img src="static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
-<li><a href="http://twitter.com/filipwasilewski"><img src="static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 
@@ -265,7 +267,7 @@ comments or questions.</p>
     <h3>Edit this document</h3>
     <p>
         <a href="#" id="toggle-edit-info">
-        <img src="static/page_edit.png" height="16" width="16" alt="" />
+        <img src="_static/page_edit.png" height="16" width="16" alt="" />
         The source code of this file is hosted on GitHub. Everyone can
         update and fix errors in this document with few clicks -
         no downloads needed.
@@ -274,7 +276,7 @@ comments or questions.</p>
     <ol id="edit-info" style="display: none;">
         <li>
             Go to
-            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/index.rst" target="_blank">
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/index.rst" target="_blank">
                 PyWavelets - Discrete Wavelet Transform in Python
             </a></i> on GitHub.
         </li>
@@ -295,7 +297,7 @@ comments or questions.</p>
         </li>
         <li>
             Your changes are now queued for review under project's
-            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
             on Github.
         </li>
     </ol>
@@ -304,7 +306,7 @@ comments or questions.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -313,13 +315,13 @@ comments or questions.</p>
         <li class="right" >
           <a href="ref/index.html" title="API Reference"
              >next</a> |</li>
-    <li><a href="#">Home &raquo;</a></li> 
+    <li><a href="#">Home &#187;</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
-      Last updated on Aug 31, 2012.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
   </body>
 </html>

@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PyWavelets 0.3.0 Release Notes &#8212; PyWavelets Documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyWavelets Documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="PyWavelets Documentation" href="index.html" />
+    <link rel="up" title="Release Notes" href="releasenotes.html" />
+    <link rel="next" title="PyWavelets 0.4.0 Release Notes" href="release.0.4.0.html" />
+    <link rel="prev" title="Release Notes" href="releasenotes.html" />
+ 
+<meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
+<meta name="author" content="Filip Wasilewski"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="INDEX,FOLLOW"/>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("#toggle-edit-info").click(function (e) {
+                e.preventDefault();
+                $("#edit-info").toggle();
+            });
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3396395-3']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="release.0.4.0.html" title="PyWavelets 0.4.0 Release Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="releasenotes.html" title="Release Notes"
+             accesskey="P">previous</a> |</li>
+    <li><a href="index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="contents.html" >PyWavelets</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="releasenotes.html" accesskey="U">Release Notes</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <div class="section" id="pywavelets-0-3-0-release-notes">
+<h1><a class="toc-backref" href="#id1">PyWavelets 0.3.0 Release Notes</a><a class="headerlink" href="#pywavelets-0-3-0-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#pywavelets-0-3-0-release-notes" id="id1">PyWavelets 0.3.0 Release Notes</a><ul>
+<li><a class="reference internal" href="#new-features" id="id2">New features</a><ul>
+<li><a class="reference internal" href="#test-suite" id="id3">Test suite</a></li>
+<li><a class="reference internal" href="#n-d-inverse-discrete-wavelet-transform" id="id4">n-D Inverse Discrete Wavelet Transform</a></li>
+<li><a class="reference internal" href="#thresholding" id="id5">Thresholding</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#backwards-incompatible-changes" id="id6">Backwards incompatible changes</a></li>
+<li><a class="reference internal" href="#other-changes" id="id7">Other changes</a></li>
+<li><a class="reference internal" href="#authors" id="id8">Authors</a><ul>
+<li><a class="reference internal" href="#issues-closed-for-v0-3-0" id="id9">Issues closed for v0.3.0</a></li>
+<li><a class="reference internal" href="#pull-requests-for-v0-3-0" id="id10">Pull requests for v0.3.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>PyWavelets 0.3.0 is the first release of the package in 3 years.  It is the
+result of a significant effort of a growing development team to modernize the
+package, to provide Python 3.x support and to make a start with providing new
+features as well as improved performance.  A 0.4.0 release will follow
+shortly, and will contain more significant new features as well as
+changes/deprecations to streamline the API.</p>
+<p>This release requires Python 2.6, 2.7 or 3.3-3.5 and NumPy 1.6.2 or greater.</p>
+<p>Highlights of this release include:</p>
+<ul class="simple">
+<li>Support for Python 3.x (&gt;=3.3)</li>
+<li>Added a test suite (based on nose, coverage up to 61% so far)</li>
+<li>Maintenance work: C style complying to the Numpy style guide, improved
+templating system, more complete docstrings, pep8/pyflakes compliance, and
+more.</li>
+</ul>
+<div class="section" id="new-features">
+<h2><a class="toc-backref" href="#id2">New features</a><a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-suite">
+<h3><a class="toc-backref" href="#id3">Test suite</a><a class="headerlink" href="#test-suite" title="Permalink to this headline">¶</a></h3>
+<p>The test suite can be run with <code class="docutils literal"><span class="pre">nosetests</span> <span class="pre">pywt</span></code> or with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pywt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywt</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="n-d-inverse-discrete-wavelet-transform">
+<h3><a class="toc-backref" href="#id4">n-D Inverse Discrete Wavelet Transform</a><a class="headerlink" href="#n-d-inverse-discrete-wavelet-transform" title="Permalink to this headline">¶</a></h3>
+<p>The function <code class="docutils literal"><span class="pre">pywt.idwtn</span></code>, which provides n-dimensional inverse DWT, has been
+added.  It complements <code class="docutils literal"><span class="pre">idwt</span></code>, <code class="docutils literal"><span class="pre">idwt2</span></code> and <code class="docutils literal"><span class="pre">dwtn</span></code>.</p>
+</div>
+<div class="section" id="thresholding">
+<h3><a class="toc-backref" href="#id5">Thresholding</a><a class="headerlink" href="#thresholding" title="Permalink to this headline">¶</a></h3>
+<p>The function <cite>pywt.threshold</cite> has been added.  It unifies the four thresholding
+functions that are still provided in the <code class="docutils literal"><span class="pre">pywt.thresholding</span></code> namespace.</p>
+</div>
+</div>
+<div class="section" id="backwards-incompatible-changes">
+<h2><a class="toc-backref" href="#id6">Backwards incompatible changes</a><a class="headerlink" href="#backwards-incompatible-changes" title="Permalink to this headline">¶</a></h2>
+<p>None in this release.</p>
+</div>
+<div class="section" id="other-changes">
+<h2><a class="toc-backref" href="#id7">Other changes</a><a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h2>
+<p>Development has moved to <a class="reference external" href="https://github.com/PyWavelets/pywt">a new repo</a>.
+Everyone with an interest in wavelets is welcome to contribute!</p>
+<p>Building wheels, building with <code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">develop</span></code> and many other
+standard ways to build and install PyWavelets are supported now.</p>
+</div>
+<div class="section" id="authors">
+<h2><a class="toc-backref" href="#id8">Authors</a><a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ankit Agrawal +</li>
+<li>François Boulogne +</li>
+<li>Ralf Gommers +</li>
+<li>David Menéndez Hurtado +</li>
+<li>Gregory R. Lee +</li>
+<li>David McInnis +</li>
+<li>Helder Oliveira +</li>
+<li>Filip Wasilewski</li>
+<li>Kai Wohlfahrt +</li>
+</ul>
+<p>A total of 9 people contributed to this release.
+People with a &#8220;+&#8221; by their names contributed a patch for the first time.
+This list of names is automatically generated, and may not be fully complete.</p>
+<div class="section" id="issues-closed-for-v0-3-0">
+<h3><a class="toc-backref" href="#id9">Issues closed for v0.3.0</a><a class="headerlink" href="#issues-closed-for-v0-3-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/3">#3</a>: Remove numerix compat layer</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/4">#4</a>: Add single code base Python 3 support</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/5">#5</a>: PEP8 issues</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/6">#6</a>: Migrate tests to nose</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/7">#7</a>: Expand test coverage without Matlab to a reasonable level</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/8">#8</a>: Replace custom C templates by Numpy&#8217;s templating system</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/9">#9</a>: Replace Cython templates by fused types</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/10">#10</a>: Replace use of __array_interface__ with Cython&#8217;s memoryviews</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/11">#11</a>: Format existing docstrings in numpydoc format.</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/12">#12</a>: Complete docstrings, they&#8217;re quite sparse right now</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/13">#13</a>: Reorganize source tree</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/24">#24</a>: doc/source/regression should be moved</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/27">#27</a>: Broken test: test_swt_decomposition</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/28">#28</a>: Install issue, no module tools.six</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/29">#29</a>: wp.update fails after removal of nodes</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/32">#32</a>: wp.update fails on 2D</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/34">#34</a>: Wavelet string attributes shouldn&#8217;t be bytes in Python 3</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/35">#35</a>: Re-enable float32 support</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/36">#36</a>: wavelet instance vs string</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/40">#40</a>: Test with Numpy 1.8rc1</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/45">#45</a>: demos should be updated and integrated in docs</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/60">#60</a>: Moving pywt forward faster</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/61">#61</a>: issues to address in moving towards 0.3.0</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/issues/71">#71</a>: BUG: _pywt.downcoef always returns level=1 result</li>
+</ul>
+</div>
+<div class="section" id="pull-requests-for-v0-3-0">
+<h3><a class="toc-backref" href="#id10">Pull requests for v0.3.0</a><a class="headerlink" href="#pull-requests-for-v0-3-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/1">#1</a>: travis: check all branches + fix URL</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/17">#17</a>: [DOC] doctrings for multilevel functions</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/18">#18</a>: DOC: format -&gt; functions.py</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/20">#20</a>: MAINT: remove unnecessary zero() copy()</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/21">#21</a>: Doc wavelet_packets</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/22">#22</a>: Minor doc fixes</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/25">#25</a>: TEST: remove useless functions and use numpy instead</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/26">#26</a>: Merge most recent work</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/30">#30</a>: Adding test for wp.rst</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/41">#41</a>: Change to Numpy templating system</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/43">#43</a>: MAINT: update six.py to not use lazy loading.</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/49">#49</a>: Taking on API Issues</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/50">#50</a>: Add idwtn</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/53">#53</a>: readme updated with info related to Py3 version</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/63">#63</a>: Remove six</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/65">#65</a>: Thresholding</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/70">#70</a>: MAINT: PEP8 fixes</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/72">#72</a>: BUG: fix _downcoef for level &gt; 1</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/73">#73</a>: MAINT: documentation and metadata update for repo fork</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/74">#74</a>: STY: fix pep8/pyflakes issues</li>
+<li><a class="reference external" href="https://github.com/PyWavelets/pywt/pull/77">#77</a>: MAINT: raise ValueError if data given to dwt or idwt is not 1D...</li>
+</ul>
+</div>
+</div>
+</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PyWavelets 0.3.0 Release Notes</a><ul>
+<li><a class="reference internal" href="#new-features">New features</a><ul>
+<li><a class="reference internal" href="#test-suite">Test suite</a></li>
+<li><a class="reference internal" href="#n-d-inverse-discrete-wavelet-transform">n-D Inverse Discrete Wavelet Transform</a></li>
+<li><a class="reference internal" href="#thresholding">Thresholding</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#backwards-incompatible-changes">Backwards incompatible changes</a></li>
+<li><a class="reference internal" href="#other-changes">Other changes</a></li>
+<li><a class="reference internal" href="#authors">Authors</a><ul>
+<li><a class="reference internal" href="#issues-closed-for-v0-3-0">Issues closed for v0.3.0</a></li>
+<li><a class="reference internal" href="#pull-requests-for-v0-3-0">Pull requests for v0.3.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="releasenotes.html"
+                        title="previous chapter">Release Notes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="release.0.4.0.html"
+                        title="next chapter">PyWavelets 0.4.0 Release Notes</a></p><div>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+<div id="edit-instructions">
+    <h3>Edit this document</h3>
+    <p>
+        <a href="#" id="toggle-edit-info">
+        <img src="_static/page_edit.png" height="16" width="16" alt="" />
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+        </a>
+    </p>
+    <ol id="edit-info" style="display: none;">
+        <li>
+            Go to
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/release.0.3.0.rst" target="_blank">
+                PyWavelets 0.3.0 Release Notes
+            </a></i> on GitHub.
+        </li>
+        <li>
+            Press <b>Edit this file</b> button.
+        </li>
+        <li>
+            Edit file contents using GitHub's text editor in your web browser
+        </li>
+        <li>
+            Fill in the <b>Commit message</b> text box at the end of the page
+            telling <i>why</i> you did the changes.
+            Press <b>Propose file change</b> button next to it when done.
+        </li>
+        <li>
+            On <i>Send a pull request</i> page you don't need to fill in text
+            anymore. Just press <b>Send pull request</b> button.
+        </li>
+        <li>
+            Your changes are now queued for review under project's
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
+            on Github.
+        </li>
+    </ol>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="release.0.4.0.html" title="PyWavelets 0.4.0 Release Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="releasenotes.html" title="Release Notes"
+             >previous</a> |</li>
+    <li><a href="index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="contents.html" >PyWavelets</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="releasenotes.html" >Release Notes</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

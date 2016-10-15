@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,33 +8,35 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PyWavelets &mdash; PyWavelets Documentation</title>
+    <title>PyWavelets &#8212; PyWavelets Documentation</title>
     
-    <link rel="stylesheet" href="static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.2.2',
+        URL_ROOT:    './',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within PyWavelets Documentation"
-          href="static/opensearch.xml"/>
-    <link rel="shortcut icon" href="static/favicon.ico"/>
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="PyWavelets Documentation" href="index.html" />
-    <link rel="next" title="API Reference" href="ref/index.html" />
+    <link rel="next" title="Release Notes" href="releasenotes.html" />
     <link rel="prev" title="Resources" href="resources.html" />
  
 <meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
-<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
 <meta name="author" content="Filip Wasilewski"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="INDEX,FOLLOW"/>
@@ -64,30 +65,45 @@
     })();
 </script>
 
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ref/index.html" title="API Reference"
+          <a href="releasenotes.html" title="Release Notes"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="resources.html" title="Resources"
              accesskey="P">previous</a> |</li>
-    <li><a href="index.html">Home &raquo;</a></li> 
+    <li><a href="index.html">Home &#187;</a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="pywavelets">
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <div class="section" id="pywavelets">
 <span id="contents"></span><h1>PyWavelets<a class="headerlink" href="#pywavelets" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
@@ -97,6 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ref/dwt-discrete-wavelet-transform.html">Discrete Wavelet Transform (DWT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref/idwt-inverse-discrete-wavelet-transform.html">Inverse Discrete Wavelet Transform (IDWT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref/2d-dwt-and-idwt.html">2D Forward and Inverse Discrete Wavelet Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref/nd-dwt-and-idwt.html">nD Forward and Inverse Discrete Wavelet Transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref/swt-stationary-wavelet-transform.html">Stationary Wavelet Transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref/wavelet-packets.html">Wavelet Packets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref/thresholding-functions.html">Thresholding functions</a></li>
@@ -129,28 +146,30 @@
 <li class="toctree-l2"><a class="reference internal" href="resources.html#articles">Articles</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release.0.3.0.html">PyWavelets 0.3.0 Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release.0.4.0.html">PyWavelets 0.4.0 Release Notes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
-
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">PyWavelets</a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#">PyWavelets</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
@@ -158,30 +177,23 @@
   <p class="topless"><a href="resources.html"
                         title="previous chapter">Resources</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ref/index.html"
-                        title="next chapter">API Reference</a></p><div>
-<h3>Python Development</h3>
-<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
-<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
+  <p class="topless"><a href="releasenotes.html"
+                        title="next chapter">Release Notes</a></p><div>
 <h3>Quick links</h3>
 <ul>
-<li><a href="https://github.com/nigma/pywt"><img src="static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
-<li><a href="http://groups.google.com/group/pywavelets"><img src="static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
-<li><a href="http://wavelets.pybytes.com/"><img src="static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
-<li><a href="http://twitter.com/filipwasilewski"><img src="static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 
@@ -190,7 +202,7 @@
     <h3>Edit this document</h3>
     <p>
         <a href="#" id="toggle-edit-info">
-        <img src="static/page_edit.png" height="16" width="16" alt="" />
+        <img src="_static/page_edit.png" height="16" width="16" alt="" />
         The source code of this file is hosted on GitHub. Everyone can
         update and fix errors in this document with few clicks -
         no downloads needed.
@@ -199,7 +211,7 @@
     <ol id="edit-info" style="display: none;">
         <li>
             Go to
-            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/contents.rst" target="_blank">
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/contents.rst" target="_blank">
                 PyWavelets
             </a></i> on GitHub.
         </li>
@@ -220,7 +232,7 @@
         </li>
         <li>
             Your changes are now queued for review under project's
-            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
             on Github.
         </li>
     </ol>
@@ -229,25 +241,25 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ref/index.html" title="API Reference"
+          <a href="releasenotes.html" title="Release Notes"
              >next</a> |</li>
         <li class="right" >
           <a href="resources.html" title="Resources"
              >previous</a> |</li>
-    <li><a href="index.html">Home &raquo;</a></li> 
+    <li><a href="index.html">Home &#187;</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
-      Last updated on Aug 31, 2012.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
   </body>
 </html>

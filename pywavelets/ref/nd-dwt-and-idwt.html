@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>nD Forward and Inverse Discrete Wavelet Transform &#8212; PyWavelets Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within PyWavelets Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PyWavelets Documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="Stationary Wavelet Transform" href="swt-stationary-wavelet-transform.html" />
+    <link rel="prev" title="2D Forward and Inverse Discrete Wavelet Transform" href="2d-dwt-and-idwt.html" />
+ 
+<meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
+<meta name="author" content="Filip Wasilewski"/>
+<meta name="Distribution" content="Global"/>
+<meta name="Robots" content="INDEX,FOLLOW"/>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("#toggle-edit-info").click(function (e) {
+                e.preventDefault();
+                $("#edit-info").toggle();
+            });
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3396395-3']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="swt-stationary-wavelet-transform.html" title="Stationary Wavelet Transform"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="2d-dwt-and-idwt.html" title="2D Forward and Inverse Discrete Wavelet Transform"
+             accesskey="P">previous</a> |</li>
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <span class="target" id="ref-dwtn"></span><div class="section" id="nd-forward-and-inverse-discrete-wavelet-transform">
+<h1>nD Forward and Inverse Discrete Wavelet Transform<a class="headerlink" href="#nd-forward-and-inverse-discrete-wavelet-transform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="single-level-dwtn">
+<h2>Single level - <code class="docutils literal"><span class="pre">dwtn</span></code><a class="headerlink" href="#single-level-dwtn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.dwtn">
+<code class="descclassname">pywt.</code><code class="descname">dwtn</code><span class="sig-paren">(</span><em>data</em>, <em>wavelet</em>, <em>mode='symmetric'</em>, <em>axes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pywt.dwtn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single-level n-dimensional Discrete Wavelet Transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray</p>
+<blockquote>
+<div><p>n-dimensional array with input data.</p>
+</div></blockquote>
+<p><strong>wavelet</strong> : Wavelet object or name string</p>
+<blockquote>
+<div><p>Wavelet to use.</p>
+</div></blockquote>
+<p><strong>mode</strong> : str, optional</p>
+<blockquote>
+<div><p>Signal extension mode, see <cite>Modes</cite>.  Default is &#8216;symmetric&#8217;.</p>
+</div></blockquote>
+<p><strong>axes</strong> : sequence of ints, optional</p>
+<blockquote>
+<div><p>Axes over which to compute the DWT. Repeated elements mean the DWT will
+be performed multiple times along these axes. A value of <cite>None</cite> (the
+default) selects all axes.</p>
+<p>Axes may be repeated, but information about the original size may be
+lost if it is not divisible by <cite>2 ** nrepeats</cite>. The reconstruction will
+be larger, with additional values derived according to the <cite>mode</cite>
+parameter. <cite>pywt.wavedecn</cite> should be used for multilevel decomposition.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coeffs</strong> : dict</p>
+<blockquote class="last">
+<div><p>Results are arranged in a dictionary, where key specifies
+the transform type on each dimension and value is a n-dimensional
+coefficients array.</p>
+<p>For example, for a 2D case the result will look something like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;aa&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">coeffs</span><span class="o">&gt;</span>  <span class="c1"># A(LL) - approx. on 1st dim, approx. on 2nd dim</span>
+ <span class="s1">&#39;ad&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">coeffs</span><span class="o">&gt;</span>  <span class="c1"># V(LH) - approx. on 1st dim, det. on 2nd dim</span>
+ <span class="s1">&#39;da&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">coeffs</span><span class="o">&gt;</span>  <span class="c1"># H(HL) - det. on 1st dim, approx. on 2nd dim</span>
+ <span class="s1">&#39;dd&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">coeffs</span><span class="o">&gt;</span>  <span class="c1"># D(HH) - det. on 1st dim, det. on 2nd dim</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="single-level-idwtn">
+<h2>Single level - <code class="docutils literal"><span class="pre">idwtn</span></code><a class="headerlink" href="#single-level-idwtn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.idwtn">
+<code class="descclassname">pywt.</code><code class="descname">idwtn</code><span class="sig-paren">(</span><em>coeffs</em>, <em>wavelet</em>, <em>mode='symmetric'</em>, <em>axes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pywt.idwtn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single-level n-dimensional Inverse Discrete Wavelet Transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>coeffs: dict</strong></p>
+<blockquote>
+<div><p>Dictionary as in output of <cite>dwtn</cite>. Missing or None items
+will be treated as zeroes.</p>
+</div></blockquote>
+<p><strong>wavelet</strong> : Wavelet object or name string</p>
+<blockquote>
+<div><p>Wavelet to use</p>
+</div></blockquote>
+<p><strong>mode</strong> : str, optional</p>
+<blockquote>
+<div><p>Signal extension mode used in the decomposition,
+see Modes (default: &#8216;symmetric&#8217;).</p>
+</div></blockquote>
+<p><strong>axes</strong> : sequence of ints, optional</p>
+<blockquote>
+<div><p>Axes over which to compute the IDWT. Repeated elements mean the IDWT
+will be performed multiple times along these axes. A value of <cite>None</cite>
+(the default) selects all axes.</p>
+<p>For the most accurate reconstruction, the axes should be provided in
+the same order as they were provided to <cite>dwtn</cite>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">data: ndarray</p>
+<blockquote class="last">
+<div><p>Original signal reconstructed from input data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="multilevel-decomposition-wavedecn">
+<h2>Multilevel decomposition - <code class="docutils literal"><span class="pre">wavedecn</span></code><a class="headerlink" href="#multilevel-decomposition-wavedecn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.wavedecn">
+<code class="descclassname">pywt.</code><code class="descname">wavedecn</code><span class="sig-paren">(</span><em>data</em>, <em>wavelet</em>, <em>mode='symmetric'</em>, <em>level=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pywt.wavedecn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multilevel nD Discrete Wavelet Transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : ndarray</p>
+<blockquote>
+<div><p>nD input data</p>
+</div></blockquote>
+<p><strong>wavelet</strong> : Wavelet object or name string</p>
+<blockquote>
+<div><p>Wavelet to use</p>
+</div></blockquote>
+<p><strong>mode</strong> : str, optional</p>
+<blockquote>
+<div><p>Signal extension mode, see Modes (default: &#8216;symmetric&#8217;)</p>
+</div></blockquote>
+<p><strong>level</strong> : int, optional</p>
+<blockquote>
+<div><p>Dxecomposition level (must be &gt;= 0). If level is None (default) then it
+will be calculated using the <code class="docutils literal"><span class="pre">dwt_max_level</span></code> function.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>[cAn, {details_level_n}, ... {details_level_1}]</strong> : list</p>
+<blockquote class="last">
+<div><p>Coefficients list</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pywt</span> <span class="k">import</span> <span class="n">wavedecn</span><span class="p">,</span> <span class="n">waverecn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coeffs</span> <span class="o">=</span> <span class="n">wavedecn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="s1">&#39;db1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Levels:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">waverecn</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span> <span class="s1">&#39;db1&#39;</span><span class="p">)</span>  
+<span class="go">array([[[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="multilevel-reconstruction-waverecn">
+<h2>Multilevel reconstruction - <code class="docutils literal"><span class="pre">waverecn</span></code><a class="headerlink" href="#multilevel-reconstruction-waverecn" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pywt.waverecn">
+<code class="descclassname">pywt.</code><code class="descname">waverecn</code><span class="sig-paren">(</span><em>coeffs</em>, <em>wavelet</em>, <em>mode='symmetric'</em><span class="sig-paren">)</span><a class="headerlink" href="#pywt.waverecn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multilevel nD Inverse Discrete Wavelet Transform.</p>
+<dl class="docutils">
+<dt>coeffs</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array_like</span><dd>Coefficients list [cAn, {details_level_n}, ... {details_level_1}]</dd>
+<dt>wavelet</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Wavelet object or name string</span><dd>Wavelet to use</dd>
+<dt>mode</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span><dd>Signal extension mode, see Modes (default: &#8216;symmetric&#8217;)</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">nD array of reconstructed data.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pywt</span> <span class="k">import</span> <span class="n">wavedecn</span><span class="p">,</span> <span class="n">waverecn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coeffs</span> <span class="o">=</span> <span class="n">wavedecn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="s1">&#39;db1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Levels:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">waverecn</span><span class="p">(</span><span class="n">coeffs</span><span class="p">,</span> <span class="s1">&#39;db1&#39;</span><span class="p">)</span>  
+<span class="go">array([[[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]],</span>
+<span class="go">       [[ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.],</span>
+<span class="go">        [ 1.,  1.,  1.,  1.]]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">nD Forward and Inverse Discrete Wavelet Transform</a><ul>
+<li><a class="reference internal" href="#single-level-dwtn">Single level - <code class="docutils literal"><span class="pre">dwtn</span></code></a></li>
+<li><a class="reference internal" href="#single-level-idwtn">Single level - <code class="docutils literal"><span class="pre">idwtn</span></code></a></li>
+<li><a class="reference internal" href="#multilevel-decomposition-wavedecn">Multilevel decomposition - <code class="docutils literal"><span class="pre">wavedecn</span></code></a></li>
+<li><a class="reference internal" href="#multilevel-reconstruction-waverecn">Multilevel reconstruction - <code class="docutils literal"><span class="pre">waverecn</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="2d-dwt-and-idwt.html"
+                        title="previous chapter">2D Forward and Inverse Discrete Wavelet Transform</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="swt-stationary-wavelet-transform.html"
+                        title="next chapter">Stationary Wavelet Transform</a></p><div>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="../_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="../_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="../_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+<div id="edit-instructions">
+    <h3>Edit this document</h3>
+    <p>
+        <a href="#" id="toggle-edit-info">
+        <img src="../_static/page_edit.png" height="16" width="16" alt="" />
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+        </a>
+    </p>
+    <ol id="edit-info" style="display: none;">
+        <li>
+            Go to
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/ref/nd-dwt-and-idwt.rst" target="_blank">
+                nD Forward and Inverse Discrete Wavelet Transform
+            </a></i> on GitHub.
+        </li>
+        <li>
+            Press <b>Edit this file</b> button.
+        </li>
+        <li>
+            Edit file contents using GitHub's text editor in your web browser
+        </li>
+        <li>
+            Fill in the <b>Commit message</b> text box at the end of the page
+            telling <i>why</i> you did the changes.
+            Press <b>Propose file change</b> button next to it when done.
+        </li>
+        <li>
+            On <i>Send a pull request</i> page you don't need to fill in text
+            anymore. Just press <b>Send pull request</b> button.
+        </li>
+        <li>
+            Your changes are now queued for review under project's
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
+            on Github.
+        </li>
+    </ol>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="swt-stationary-wavelet-transform.html" title="Stationary Wavelet Transform"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="2d-dwt-and-idwt.html" title="2D Forward and Inverse Discrete Wavelet Transform"
+             >previous</a> |</li>
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

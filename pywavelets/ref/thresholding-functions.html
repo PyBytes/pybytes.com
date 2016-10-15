@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,34 +8,36 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Thresholding functions &mdash; PyWavelets Documentation</title>
+    <title>Thresholding functions &#8212; PyWavelets Documentation</title>
     
-    <link rel="stylesheet" href="../static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.2',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within PyWavelets Documentation"
-          href="../static/opensearch.xml"/>
-    <link rel="shortcut icon" href="../static/favicon.ico"/>
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="PyWavelets Documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="index.html" />
     <link rel="next" title="Other functions" href="other-functions.html" />
     <link rel="prev" title="Wavelet Packets" href="wavelet-packets.html" />
  
 <meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
-<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
 <meta name="author" content="Filip Wasilewski"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="INDEX,FOLLOW"/>
@@ -65,9 +66,17 @@
     })();
 </script>
 
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -79,143 +88,105 @@
         <li class="right" >
           <a href="wavelet-packets.html" title="Wavelet Packets"
              accesskey="P">previous</a> |</li>
-    <li><a href="../index.html">Home &raquo;</a></li>
-          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="thresholding-functions">
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <div class="section" id="thresholding-functions">
 <span id="ref-thresholding"></span><h1>Thresholding functions<a class="headerlink" href="#thresholding-functions" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">thresholding</span></tt> helper module implements the most popular signal
+<p>The <code class="xref py py-mod docutils literal"><span class="pre">thresholding</span></code> helper module implements the most popular signal
 thresholding functions.</p>
-<div class="section" id="hard-thresholding">
-<h2>Hard thresholding<a class="headerlink" href="#hard-thresholding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="thresholding">
+<h2>Thresholding<a class="headerlink" href="#thresholding" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="hard">
-<tt class="descname">hard</tt><big>(</big><em>data</em>, <em>value</em><span class="optional">[</span>, <em>substitute=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#hard" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hard thresholding. Replace all <em>data</em> values with <em>substitute</em> where their
-absolute value is less than the <em>value</em> param.</p>
-<p><em>Data</em> values with absolute value greater or equal to the thresholding
-<em>value</em> stay untouched.</p>
+<dt id="pywt.threshold">
+<code class="descclassname">pywt.</code><code class="descname">threshold</code><span class="sig-paren">(</span><em>data</em>, <em>value</em>, <em>mode='soft'</em>, <em>substitute=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pywt.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thresholds the input data depending on the mode argument.</p>
+<p>In <code class="docutils literal"><span class="pre">soft</span></code> thresholding, the data values where their absolute value is
+less than the value param are replaced with substitute. From the data
+values with absolute value greater or equal to the thresholding value,
+a quantity of <code class="docutils literal"><span class="pre">(signum</span> <span class="pre">*</span> <span class="pre">value)</span></code> is subtracted.</p>
+<p>In <code class="docutils literal"><span class="pre">hard</span></code> thresholding, the data values where their absolute value is
+less than the value param are replaced with substitute. Data values with
+absolute value greater or equal to the thresholding value stay untouched.</p>
+<p>In <code class="docutils literal"><span class="pre">greater</span></code> thresholding, the data is replaced with substitute where
+data is below the thresholding value. Greater data values pass untouched.</p>
+<p>In <code class="docutils literal"><span class="pre">less</span></code> thresholding, the data is replaced with substitute where data
+is above the thresholding value. Less data values pass untouched.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; numeric data</li>
-<li><strong>value</strong> &#8211; thresholding value</li>
-<li><strong>substitute</strong> &#8211; substitute value</li>
-</ul>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : array_like</p>
+<blockquote>
+<div><p>Numeric data.</p>
+</div></blockquote>
+<p><strong>value</strong> : scalar</p>
+<blockquote>
+<div><p>Thresholding value.</p>
+</div></blockquote>
+<p><strong>mode</strong> : {&#8216;soft&#8217;, &#8216;hard&#8217;, &#8216;greater&#8217;, &#8216;less&#8217;}</p>
+<blockquote>
+<div><p>Decides the type of thresholding to be applied on input data. Default
+is &#8216;soft&#8217;.</p>
+</div></blockquote>
+<p><strong>substitute</strong> : float, optional</p>
+<blockquote>
+<div><p>Substitute value (default: 0).</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="soft-thresholding">
-<h2>Soft thresholding<a class="headerlink" href="#soft-thresholding" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="soft">
-<tt class="descname">soft</tt><big>(</big><em>data</em>, <em>value</em><span class="optional">[</span>, <em>substitute=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#soft" title="Permalink to this definition">¶</a></dt>
-<dd><p>Soft thresholding.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; numeric data</li>
-<li><strong>value</strong> &#8211; thresholding value</li>
-<li><strong>substitute</strong> &#8211; substitute value</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output</strong> : array</p>
+<blockquote class="last">
+<div><p>Thresholded array.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pywt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span>
+<span class="go">array([ 1. ,  1.5,  2. ,  2.5,  3. ,  3.5,  4. ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywt</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;soft&#39;</span><span class="p">)</span>
+<span class="go">array([ 0. ,  0. ,  0. ,  0.5,  1. ,  1.5,  2. ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywt</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;hard&#39;</span><span class="p">)</span>
+<span class="go">array([ 0. ,  0. ,  2. ,  2.5,  3. ,  3.5,  4. ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywt</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<span class="go">array([ 0. ,  0. ,  2. ,  2.5,  3. ,  3.5,  4. ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywt</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;less&#39;</span><span class="p">)</span>
+<span class="go">array([ 1. ,  1.5,  2. ,  0. ,  0. ,  0. ,  0. ])</span>
+</pre></div>
 </div>
-<div class="section" id="greater">
-<h2>Greater<a class="headerlink" href="#greater" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt>
-<tt class="descname">greater</tt><big>(</big><em>data</em>, <em>value</em><span class="optional">[</span>, <em>substitute=0</em><span class="optional">]</span><big>)</big></dt>
-<dd><p>Replace <em>data</em> with <em>substitute</em> where <em>data</em> is below the thresholding
-<em>value</em>.</p>
-<p><cite>Greater</cite> <em>data</em> values pass untouched.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; numeric data</li>
-<li><strong>value</strong> &#8211; thresholding value</li>
-<li><strong>substitute</strong> &#8211; substitute value</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</div>
-<div class="section" id="less">
-<h2>Less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt>
-<tt class="descname">less</tt><big>(</big><em>data</em>, <em>value</em><span class="optional">[</span>, <em>substitute=0</em><span class="optional">]</span><big>)</big></dt>
-<dd><p>Replace <em>data</em> with <em>substitute</em> where <em>data</em> is above the thresholding
-<em>value</em>.</p>
-<p><cite>Less</cite> <em>data</em> values pass untouched.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> &#8211; numeric data</li>
-<li><strong>value</strong> &#8211; thresholding value</li>
-<li><strong>substitute</strong> &#8211; substitute value</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </div>
 </div>
-
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Thresholding functions</a><ul>
-<li><a class="reference internal" href="#hard-thresholding">Hard thresholding</a></li>
-<li><a class="reference internal" href="#soft-thresholding">Soft thresholding</a></li>
-<li><a class="reference internal" href="#greater">Greater</a></li>
-<li><a class="reference internal" href="#less">Less</a></li>
+<li><a class="reference internal" href="#thresholding">Thresholding</a></li>
 </ul>
 </li>
 </ul>
@@ -226,28 +197,21 @@ absolute value is less than the <em>value</em> param.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="other-functions.html"
                         title="next chapter">Other functions</a></p><div>
-<h3>Python Development</h3>
-<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
-<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
 <h3>Quick links</h3>
 <ul>
-<li><a href="https://github.com/nigma/pywt"><img src="../static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
-<li><a href="http://groups.google.com/group/pywavelets"><img src="../static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
-<li><a href="http://wavelets.pybytes.com/"><img src="../static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
-<li><a href="http://twitter.com/filipwasilewski"><img src="../static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="../_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="../_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="../_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 
@@ -256,7 +220,7 @@ absolute value is less than the <em>value</em> param.</p>
     <h3>Edit this document</h3>
     <p>
         <a href="#" id="toggle-edit-info">
-        <img src="../static/page_edit.png" height="16" width="16" alt="" />
+        <img src="../_static/page_edit.png" height="16" width="16" alt="" />
         The source code of this file is hosted on GitHub. Everyone can
         update and fix errors in this document with few clicks -
         no downloads needed.
@@ -265,7 +229,7 @@ absolute value is less than the <em>value</em> param.</p>
     <ol id="edit-info" style="display: none;">
         <li>
             Go to
-            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/ref/thresholding-functions.rst" target="_blank">
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/ref/thresholding-functions.rst" target="_blank">
                 Thresholding functions
             </a></i> on GitHub.
         </li>
@@ -286,7 +250,7 @@ absolute value is less than the <em>value</em> param.</p>
         </li>
         <li>
             Your changes are now queued for review under project's
-            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
             on Github.
         </li>
     </ol>
@@ -295,7 +259,7 @@ absolute value is less than the <em>value</em> param.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -307,15 +271,14 @@ absolute value is less than the <em>value</em> param.</p>
         <li class="right" >
           <a href="wavelet-packets.html" title="Wavelet Packets"
              >previous</a> |</li>
-    <li><a href="../index.html">Home &raquo;</a></li>
-          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
-          <li><a href="index.html" >API Reference</a> &raquo;</li> 
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
-      Last updated on Aug 31, 2012.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
   </body>
 </html>

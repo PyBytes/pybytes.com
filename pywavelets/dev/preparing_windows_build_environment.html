@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,34 +8,36 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Preparing Windows build environment &mdash; PyWavelets Documentation</title>
+    <title>Preparing Windows build environment &#8212; PyWavelets Documentation</title>
     
-    <link rel="stylesheet" href="../static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2.2',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../static/jquery.js"></script>
-    <script type="text/javascript" src="../static/underscore.js"></script>
-    <script type="text/javascript" src="../static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within PyWavelets Documentation"
-          href="../static/opensearch.xml"/>
-    <link rel="shortcut icon" href="../static/favicon.ico"/>
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="PyWavelets Documentation" href="../index.html" />
     <link rel="up" title="Development notes" href="index.html" />
     <link rel="next" title="Preparing Linux build environment" href="preparing_linux_build_environment.html" />
     <link rel="prev" title="Development notes" href="index.html" />
  
 <meta name="description" content="PyWavelets is a scientific Python module for Wavelet Transform calculations."/>
-<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt, Filip Wasilewski"/>
+<meta name="keywords" content="PyWavelets, wavelets, Python, wavelet transform, discrete wavelet transform, dwt, idwt, swt, wavelet packets, stationary wavelet transform, pywt"/>
 <meta name="author" content="Filip Wasilewski"/>
 <meta name="Distribution" content="Global"/>
 <meta name="Robots" content="INDEX,FOLLOW"/>
@@ -65,9 +66,17 @@
     })();
 </script>
 
+<script>
+    setTimeout(function () {
+        var url = 'https://pywavelets.readthedocs.io' + window.location.pathname.replace('/pywavelets/', '/en/latest/');
+        window.location = url;
+    }, 10000);
+</script>
+
+
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -79,26 +88,36 @@
         <li class="right" >
           <a href="index.html" title="Development notes"
              accesskey="P">previous</a> |</li>
-    <li><a href="../index.html">Home &raquo;</a></li>
-          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Development notes</a> &raquo;</li> 
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Development notes</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="preparing-windows-build-environment">
+    <div class="section">
+        <div style="background-color: #ff6; padding: 10px;">
+            <strong>New documentation location</strong><br>
+            PyWavelets documentation has moved to <a href="https://pywavelets.readthedocs.io/">pywavelets.readthedocs.io</a>.
+            You will be automatically redirected there in 10 seconds.
+        </div>
+    </div>
+    <div class="section" id="preparing-windows-build-environment">
 <span id="dev-building-on-windows"></span><h1>Preparing Windows build environment<a class="headerlink" href="#preparing-windows-build-environment" title="Permalink to this headline">¶</a></h1>
 <p>To start developing PyWavelets code on Windows you will have to install
 a C compiler and prepare the build environment.</p>
 <div class="section" id="installing-windows-sdk-c-c-compiler">
 <h2>Installing Windows SDK C/C++ compiler<a class="headerlink" href="#installing-windows-sdk-c-c-compiler" title="Permalink to this headline">¶</a></h2>
-<p>Microsoft Visual C++ 2008 (Microsoft Visual Studio 9.0) is the compiler that
-is suitable for building extensions for Python 2.6, 2.7, 3.0, 3.1 and 3.2
-(both 32 and 64 bit).</p>
+<p>Depending on your Python version, a different version of the Microsoft Visual
+C++ compiler will be required to build extensions. The same compiler that was
+used to build Python itself should be used.</p>
+<p>For official binary builds of Python 2.6 to 3.2, this will be VS 2008. Python
+3.3 and 3.4 were compiled with VS 2010, and for Python 3.5 it will be MSVC 2015.</p>
+<p>The MSVC version should be printed when starting a Python REPL, and can be
+checked against the note below:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>For reference:</p>
@@ -106,10 +125,13 @@ is suitable for building extensions for Python 2.6, 2.7, 3.0, 3.1 and 3.2
 <li>the <em>MSC v.1500</em> in the Python version string is Microsoft Visual
 C++ 2008 (Microsoft Visual Studio 9.0 with msvcr90.dll runtime)</li>
 <li><em>MSC v.1600</em> is MSVC 2010 (10.0 with msvcr100.dll runtime)</li>
-<li><em>MSC v.1700</em> is MSVC 2011 (11.0)</li>
+<li><em>MSC v.1700</em> is MSVC 2012 (11.0)</li>
+<li><em>MSC v.1800</em> is MSVC 2013 (12.0)</li>
+<li><em>MSC v.1900</em> is MSVC 2015 (14.0)</li>
 </ul>
-<div class="last highlight-python"><pre>Python 2.7.3 (default, Apr 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)] on win32
-Python 3.2 (r32:88445, Feb 20 2011, 21:30:00) [MSC v.1500 64 bit (AMD64)] on win32</pre>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">3</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">10</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">23</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">26</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="o">.</span><span class="mi">1500</span> <span class="mi">32</span> <span class="n">bit</span> <span class="p">(</span><span class="n">Intel</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Python</span> <span class="mf">3.2</span> <span class="p">(</span><span class="n">r32</span><span class="p">:</span><span class="mi">88445</span><span class="p">,</span> <span class="n">Feb</span> <span class="mi">20</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">21</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">00</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="o">.</span><span class="mi">1500</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+</pre></div>
 </div>
 </div>
 <p>To get started first download, extract and install <em>Microsoft Windows SDK for
@@ -119,35 +141,35 @@ Windows 7 and .NET Framework 3.5 SP1</em> from
 for your platform:</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">GRMSDK_EN_DVD.iso</span></tt> for 32-bit x86 platform</li>
-<li><tt class="docutils literal"><span class="pre">GRMSDKX_EN_DVD.iso</span></tt> for 64-bit AMD64 platform (AMD64 is the codename for
+<li><code class="docutils literal"><span class="pre">GRMSDK_EN_DVD.iso</span></code> for 32-bit x86 platform</li>
+<li><code class="docutils literal"><span class="pre">GRMSDKX_EN_DVD.iso</span></code> for 64-bit AMD64 platform (AMD64 is the codename for
 64-bit CPU architecture, not the processor manufacturer)</li>
 </ul>
 </div></blockquote>
 <p>After installing the SDK and before compiling the extension you have
 to configure some environment variables.</p>
-<p>For 32-bit build execute the <tt class="docutils literal"><span class="pre">util/setenv_build32.bat</span></tt> script in the cmd
+<p>For 32-bit build execute the <code class="docutils literal"><span class="pre">util/setenv_build32.bat</span></code> script in the cmd
 window:</p>
 <blockquote>
-<div><div class="highlight-bat"><div class="highlight"><pre><span class="c">rem Configure the environment for 32-bit builds.</span>
-<span class="c">rem Use &quot;vcvars32.bat&quot; for a 32-bit build.</span>
+<div><div class="highlight-bat"><div class="highlight"><pre><span></span><span class="c1">rem Configure the environment for 32-bit builds.</span>
+<span class="c1">rem Use &quot;vcvars32.bat&quot; for a 32-bit build.</span>
 <span class="s2">&quot;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin\vcvars32.bat&quot;</span>
-<span class="c">rem Convince setup.py to use the SDK tools.</span>
-<span class="k">set</span> <span class="nv">MSSdk</span><span class="o">=</span><span class="m">1</span>
-setenv <span class="n">/x86</span> <span class="n">/release</span>
-<span class="k">set</span> <span class="nv">DISTUTILS_USE_SDK</span><span class="o">=</span><span class="m">1</span>
+<span class="c1">rem Convince setup.py to use the SDK tools.</span>
+<span class="k">set</span> <span class="nv">MSSdk</span><span class="p">=</span>1
+setenv /x86 /release
+<span class="k">set</span> <span class="nv">DISTUTILS_USE_SDK</span><span class="p">=</span>1
 </pre></div>
 </div>
 </div></blockquote>
-<p>For 64-bit use <tt class="docutils literal"><span class="pre">util/setenv_build64.bat</span></tt>:</p>
+<p>For 64-bit use <code class="docutils literal"><span class="pre">util/setenv_build64.bat</span></code>:</p>
 <blockquote>
-<div><div class="highlight-bat"><div class="highlight"><pre><span class="c">rem Configure the environment for 64-bit builds.</span>
-<span class="c">rem Use &quot;vcvars32.bat&quot; for a 32-bit build.</span>
+<div><div class="highlight-bat"><div class="highlight"><pre><span></span><span class="c1">rem Configure the environment for 64-bit builds.</span>
+<span class="c1">rem Use &quot;vcvars32.bat&quot; for a 32-bit build.</span>
 <span class="s2">&quot;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin\vcvars64.bat&quot;</span>
-<span class="c">rem Convince setup.py to use the SDK tools.</span>
-<span class="k">set</span> <span class="nv">MSSdk</span><span class="o">=</span><span class="m">1</span>
-setenv <span class="n">/x64</span> <span class="n">/release</span>
-<span class="k">set</span> <span class="nv">DISTUTILS_USE_SDK</span><span class="o">=</span><span class="m">1</span>
+<span class="c1">rem Convince setup.py to use the SDK tools.</span>
+<span class="k">set</span> <span class="nv">MSSdk</span><span class="p">=</span>1
+setenv /x64 /release
+<span class="k">set</span> <span class="nv">DISTUTILS_USE_SDK</span><span class="p">=</span>1
 </pre></div>
 </div>
 </div></blockquote>
@@ -159,9 +181,9 @@ setenv <span class="n">/x64</span> <span class="n">/release</span>
 <a class="reference external" href="http://sourceforge.net/projects/mingwbuilds/">http://sourceforge.net/projects/mingwbuilds/</a>.</p>
 <p>In order to change the settings and use MinGW as the default compiler,
 edit or create a Distutils configuration file
-<tt class="docutils literal"><span class="pre">c:\Python2*\Lib\distutils\distutils.cfg</span></tt> and place the following
+<code class="docutils literal"><span class="pre">c:\Python2*\Lib\distutils\distutils.cfg</span></code> and place the following
 entry in it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">build</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="p">]</span>
 <span class="n">compiler</span> <span class="o">=</span> <span class="n">mingw32</span>
 </pre></div>
 </div>
@@ -170,11 +192,11 @@ page at <a class="reference external" href="http://wiki.cython.org/InstallingOnW
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Python 2.7/3.2 distutils package is incompatible with the current version
-(4.7+) of MinGW (MinGW dropped the <tt class="docutils literal"><span class="pre">-mno-cygwin</span></tt> flag, which is still
+(4.7+) of MinGW (MinGW dropped the <code class="docutils literal"><span class="pre">-mno-cygwin</span></code> flag, which is still
 passed by distutils).</p>
 <p>To use MinGW to compile Python extensions you have to patch the
-<tt class="docutils literal"><span class="pre">distutils/cygwinccompiler.py</span></tt> library module and remove every occurrence
-of <tt class="docutils literal"><span class="pre">-mno-cygwin</span></tt>.</p>
+<code class="docutils literal"><span class="pre">distutils/cygwinccompiler.py</span></code> library module and remove every occurrence
+of <code class="docutils literal"><span class="pre">-mno-cygwin</span></code>.</p>
 <p class="last">See <a class="reference external" href="http://bugs.python.org/issue12641">http://bugs.python.org/issue12641</a> bug report for more information
 on the issue.</p>
 </div>
@@ -182,15 +204,14 @@ on the issue.</p>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>After completing these steps continue with
-<a class="reference internal" href="installing_build_dependencies.html#dev-installing-build-dependencies"><em>Installing build dependencies</em></a>.</p>
+<a class="reference internal" href="installing_build_dependencies.html#dev-installing-build-dependencies"><span class="std std-ref">Installing build dependencies</span></a>.</p>
 </div>
 </div>
-
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -208,28 +229,21 @@ on the issue.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="preparing_linux_build_environment.html"
                         title="next chapter">Preparing Linux build environment</a></p><div>
-<h3>Python Development</h3>
-<p><a href="http://en.ig.ma/">Django web development for startups and businesses.</a></p>
-<p><a href="http://en.ig.ma/">Quality Python development and scientific applications.</a></p>
 <h3>Quick links</h3>
 <ul>
-<li><a href="https://github.com/nigma/pywt"><img src="../static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
-<li><a href="http://groups.google.com/group/pywavelets"><img src="../static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
-<li><a href="http://wavelets.pybytes.com/"><img src="../static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
-<li><a href="http://twitter.com/filipwasilewski"><img src="../static/twitter.png" height="16" width="16" alt="" /> Follow on Twitter</a></li>
+<li><a href="https://github.com/PyWavelets/pywt"><img src="../_static/github.png" height="16" width="16" alt="" /> Fork on Github</a></li>
+<li><a href="http://groups.google.com/group/pywavelets"><img src="../_static/comments.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="http://wavelets.pybytes.com/"><img src="../_static/wave.png" height="16" width="16" alt="" /> Explore Wavelets</a></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
 
@@ -238,7 +252,7 @@ on the issue.</p>
     <h3>Edit this document</h3>
     <p>
         <a href="#" id="toggle-edit-info">
-        <img src="../static/page_edit.png" height="16" width="16" alt="" />
+        <img src="../_static/page_edit.png" height="16" width="16" alt="" />
         The source code of this file is hosted on GitHub. Everyone can
         update and fix errors in this document with few clicks -
         no downloads needed.
@@ -247,7 +261,7 @@ on the issue.</p>
     <ol id="edit-info" style="display: none;">
         <li>
             Go to
-            <i><a href="https://github.com/nigma/pywt/blob/develop/doc/source/dev/preparing_windows_build_environment.rst" target="_blank">
+            <i><a href="https://github.com/PyWavelets/pywt/blob/master/doc/source/dev/preparing_windows_build_environment.rst" target="_blank">
                 Preparing Windows build environment
             </a></i> on GitHub.
         </li>
@@ -268,7 +282,7 @@ on the issue.</p>
         </li>
         <li>
             Your changes are now queued for review under project's
-            <a href="https://github.com/nigma/pywt/pulls" target="_blank">Pull requests</a> tab
+            <a href="https://github.com/PyWavelets/pywt/pulls" target="_blank">Pull requests</a> tab
             on Github.
         </li>
     </ol>
@@ -277,7 +291,7 @@ on the issue.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -289,15 +303,14 @@ on the issue.</p>
         <li class="right" >
           <a href="index.html" title="Development notes"
              >previous</a> |</li>
-    <li><a href="../index.html">Home &raquo;</a></li>
-          <li><a href="../contents.html" >PyWavelets</a> &raquo;</li>
-          <li><a href="index.html" >Development notes</a> &raquo;</li> 
+    <li><a href="../index.html">Home &#187;</a></li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Development notes</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2006-2012, <a href="http://en.ig.ma/">Filip Wasilewski</a>.
-      Last updated on Aug 31, 2012.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2016, <a href="https://groups.google.com/forum/#!forum/pywavelets">The PyWavelets Developers</a>.
+      Last updated on Oct 15, 2016.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
     </div>
   </body>
 </html>
